@@ -3,7 +3,7 @@
 	<head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>不高兴先生的小破站</title>
+		<title>不高兴先生的小破站</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="Free HTML5 Website Template by freehtml5.co" />
 	<meta name="keywords" content="free website templates, free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
@@ -53,6 +53,18 @@
 	<!-- Theme style  -->
 	<link rel="stylesheet" href="css/style.css">
 
+
+
+		<!--直连看板娘-->
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
+
+		<script src="autoload.js"></script>
+
+		<!--音乐侧边栏播放器-->
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/LwpLoveHxq/music_jsdelivr@1.12/css/player_music.css">
+
+
+
 	<!-- Modernizr JS -->
 	<script src="js/modernizr-2.6.2.min.js"></script>
 	<!-- FOR IE9 below -->
@@ -74,9 +86,9 @@
 						<div class="row">
 							<div class="col-sm-7 text-left menu-1">
 								<ul>
-									<li class="active"><a href="index.html">主页</a></li>
-                                    <li class="active"><a href="">她</a></li>
-									<li class="has-dropdown">
+									<li><a href="index.html">主页</a></li>
+                                    <li><a href="https://lwplovehxq.github.io/HxqLwp/" target="_blank">她</a></li>
+									<li class="has-dropdown active">
 										<a href="blog.html">工作与学习</a>
 										<ul class="dropdown">
 											<li><a href="#">Web Design</a></li>
@@ -340,31 +352,104 @@
 	<script src="js/main.js"></script>
 
 
-//小呆瓜
-	<script src="https://cdn.jsdelivr.net/npm/live2d-widget@3.1.4/lib/L2Dwidget.min.js"></script>
-    <script type="text/javascript">
-        L2Dwidget.init({"display": {
-                "superSample": 2,
-                "width": 200,
-                "height": 400,
-                "position": "right",
-                "hOffset": 0,
-                "vOffset": 0
-            }
-        });
-    </script>
-    <script src="js/search.js" type="text/javascript"></script>
-    
-    <div class="live2d-widget-container" id="live2d-widget" style="width: 200px; 
-    height: 400px; right: 0px; bottom: 0px; 
-    position: fixed; z-index: 99999; opacity: 1; 
-    pointer-events: none;">
-    <canvas width="400" height="800" id="live2dcanvas" style="left: 0px; 
-    top: 0px; width: 200px; 
-    height: 400px; 
-    position: absolute;">
-    </canvas>
-    </div>
+<!--小呆瓜-->
+<!--	<script src="https://cdn.jsdelivr.net/npm/live2d-widget@3.1.4/lib/L2Dwidget.min.js"></script>-->
+<!--    <script type="text/javascript">-->
+<!--        L2Dwidget.init({"display": {-->
+<!--                "superSample": 2,-->
+<!--                "width": 200,-->
+<!--                "height": 400,-->
+<!--                "position": "right",-->
+<!--                "hOffset": 0,-->
+<!--                "vOffset": 0-->
+<!--            }-->
+<!--        });-->
+<!--    </script>-->
+<!--    <script src="js/search.js" type="text/javascript"></script>-->
+<!--    -->
+<!--    <div class="live2d-widget-container" id="live2d-widget" style="width: 200px; -->
+<!--    height: 400px; right: 0px; bottom: 0px; -->
+<!--    position: fixed; z-index: 99999; opacity: 1; -->
+<!--    pointer-events: none;">-->
+<!--    <canvas width="400" height="800" id="live2dcanvas" style="left: 0px; -->
+<!--    top: 0px; width: 200px; -->
+<!--    height: 400px; -->
+<!--    position: absolute;">-->
+<!--    </canvas>-->
+<!--    </div>-->
+
+	<!--侧边栏音乐播放器开始-->
+	<div id="QPlayer" >
+		<div id="pContent">
+			<div id="player">
+				<span class="cover"></span>
+				<div class="ctrl">
+					<div class="musicTag marquee">
+						<strong>Title</strong>
+						<span> - </span>
+						<span class="artist">Artist</span>
+					</div>
+					<div class="progressss">
+						<div class="timer left">0:00</div>
+						<div class="contr">
+							<div class="rewind icon" id="music_Last_song"></div>
+							<div class="playback icon" id="music_stop"></div>
+							<div class="fastforward icon" id="music_Next_song"></div>
+						</div>
+						<div class="right_mu">
+							<div class="liebiao icon" id="music_song_sheet"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="ssBtn" id="music_chu">
+				<div class="adf"></div>
+			</div>
+		</div>
+		<ol id="playlist"></ol>
+	</div>
+	<!--
+            <script src="https://cdn.jsdelivr.net/gh/LwpLoveHxq/music_jsdelivr@1.1/js/jquery.min_music.js"></script>
+            <script src="https://cdn.jsdelivr.net/gh/LwpLoveHxq/music_jsdelivr@1.1/js/jquery.marquee.min_music.js"></script>
+        -->
+	<script>
+		var	playlist = [
+			{title:"有人",artist:"赵钶",mp3:"http://music.163.com/song/media/outer/url?id=1297750769.mp3",cover:"http://music.163.com/#/song?id=1297750769",},
+			{title:"生而为人",artist:"尚士达",mp3:"http://music.163.com/song/media/outer/url?id=1335350269.mp3",cover:"http://music.163.com/#/song?id=1335350269",},
+			{title:"第三人称",artist:"买辣椒也用券",mp3:"http://music.163.com/song/media/outer/url?id=502043537.mp3",cover:"http://music.163.com/#/song?id=502043537",},
+			{title:"活着",artist:"郝云",mp3:"http://music.163.com/song/media/outer/url?id=27646786.mp3",cover:"http://music.163.com/#/song?id=27646786",},
+			{title:"起风了",artist:"买辣椒也用券",mp3:"http://music.163.com/song/media/outer/url?id=1330348068.mp3",cover:"http://music.163.com/#/song?id=1330348068",},
+			{title:"我们的明天",artist:"鹿晗",mp3:"http://music.163.com/song/media/outer/url?id=29771231.mp3",cover:"http://music.163.com/#/song?id=29771231",},
+			{title:"不为谁而作的歌",artist:"林俊杰",mp3:"http://music.163.com/song/media/outer/url?id=486194136.mp3",cover:"http://music.163.com/#/song?id=486194136",},
+			{title:"绿色",artist:"陈雪凝",mp3:"http://music.163.com/song/media/outer/url?id=1345848098.mp3",cover:"http://music.163.com/#/song?id=1345848098",},
+			{title:"想死却又不敢",artist:"井胧",mp3:"http://music.163.com/song/media/outer/url?id=1379456709.mp3",cover:"http://music.163.com/#/song?id=1379456709",},
+			{title:"哑巴",artist:"薛之谦",mp3:"http://music.163.com/song/media/outer/url?id=557583281.mp3",cover:"http://music.163.com/#/song?id=557583281",},
+			{title:"男孩 (Live)",artist:"梁博",mp3:"http://music.163.com/song/media/outer/url?id=467952048.mp3",cover:"http://music.163.com/#/song?id=467952048",},
+			{title:"刚刚好",artist:"薛之谦",mp3:"http://music.163.com/song/media/outer/url?id=415792881.mp3",cover:"http://music.163.com/#/song?id=415792881",},
+			{title:"怪咖",artist:"薛之谦",mp3:"http://music.163.com/song/media/outer/url?id=574921549.mp3",cover:"http://music.163.com/#/song?id=574921549",},
+			{title:"那些年",artist:"胡夏",mp3:"http://music.163.com/song/media/outer/url?id=97357.mp3",cover:"http://music.163.com/#/song?id=97357",},
+			{title:"心做し（Cover GUMI）",artist:"双笙",mp3:"http://music.163.com/song/media/outer/url?id=478303470.mp3",cover:"http://music.163.com/#/song?id=478303470",},
+			{title:"浮夸",artist:"陈奕迅",mp3:"http://music.163.com/song/media/outer/url?id=66282.mp3",cover:"http://music.163.com/#/song?id=66282",},
+			{title:"这个年纪",artist:"齐一",mp3:"http://music.163.com/song/media/outer/url?id=35476049.mp3",cover:"http://music.163.com/#/song?id=35476049",},
+			{title:"你的答案",artist:"阿冗",mp3:"http://music.163.com/song/media/outer/url?id=1400256289.mp3",cover:"http://music.163.com/#/song?id=1400256289",},
+			{title:"飞鸟和蝉",artist:"任然（丫头推荐）",mp3:"https://sharefs.yun.kugou.com/202007191250/eff3e2a2b67d40b5328a624fb53b7907/G229/M09/13/0F/xZQEAF79mTeAKaQYAEhIqW4SCKE706.mp3",cover:"http://www.kugou.com/song/#hash=8F71D370AECB50E5F433CC20EB1528A7",},//酷狗
+
+		];
+		var isRotate = true;
+		var autoplay = false;
+	</script>
+	<script src="https://cdn.jsdelivr.net/gh/LwpLoveHxq/music_jsdelivr@1.12/js/player_music.js"></script>
+	<script>
+
+		function bgChange(){
+			var lis= $('.lib');
+			for(var i=0; i<lis.length; i+=2)
+				lis[i].style.background = 'rgba(246, 246, 246, 0.5)';
+		}
+		window.onload = bgChange;
+	</script>
+
+	<!--侧边栏音乐播放器结束-->
     
 	</body>
 </html>
